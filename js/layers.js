@@ -32,3 +32,24 @@ addLayer("t", {
         },
     }
 })
+
+addLayer("ach", {
+    startData() { return {
+        unlocked: true,
+    }},
+    color: "#C0C0C0",
+    symbol: "⚙",
+    row: "side",
+    position: 0,
+    name:"Autobuyers",
+    tooltip: "Automation",
+    layerShown() {return true},
+    achievements: {
+        11: {
+            name: "You started game!",
+            done() {return hasUpgrade('t', 11)},
+            goalTooltip: "Buy Upgrade #1 for time layer",
+            doneTooltip: "Buy Upgrade #1 for time layer (Completed)",
+        },
+    }
+})
