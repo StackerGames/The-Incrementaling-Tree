@@ -38,11 +38,11 @@ addLayer("ach", {
         unlocked: true,
     }},
     color: "#C0C0C0",
-    symbol: "⚙",
+    symbol: "A",
     row: "side",
     position: 0,
-    name:"Autobuyers",
-    tooltip: "Automation",
+    name:"Achievements",
+    tooltip: "Achievements",
     layerShown() {return true},
     achievements: {
         11: {
