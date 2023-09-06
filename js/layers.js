@@ -30,6 +30,10 @@ addLayer("t", {
             description: "Double Production",
             cost: new Decimal(10),
         },
+        12: {
+            description: "x10 Production",
+            cost: new Decimal(20),
+        },
     }
 })
 
@@ -47,9 +51,21 @@ addLayer("ach", {
     achievements: {
         11: {
             name: "You started game!",
-            done() {return hasUpgrade('t', 11)},
+            done() {return new Decimal (player.time.upgrades.length).gte("1")},
             goalTooltip: "Buy Upgrade #1 for time layer",
             doneTooltip: "Buy Upgrade #1 for time layer (Completed)",
+        },
+        12: {
+            name: "Are your strong",
+            done() {return new Decimal (player.time.upgrades.length).gte("2")},
+            goalTooltip: "Buy Upgrade #2 for time layer",
+            doneTooltip: "Buy Upgrade #2 for time layer (Completed)",
+        },
+        13: {
+            name: "Too many time points...",
+            done() {return player.time.points.gte("1800")},
+            goalTooltip: "Buy Upgrade #2 for time layer",
+            doneTooltip: "Buy Upgrade #2 for time layer (Completed)",
         },
     }
 })
